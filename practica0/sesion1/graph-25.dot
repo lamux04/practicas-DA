@@ -1,0 +1,8 @@
+digraph {
+	graph [fontname=Arial, nodesep=0.125, ranksep=0.25];
+	node [fontcolor=white, fontname=Arial, height=0, shape=box, style=filled, width=0];
+	edge [fontname=Arial];
+	8 [color="#ff0000", fontcolor="#ffffff", fontsize="10.00", label="f1(unsigned long)\n100.00%\n(100.00%)\n26×"];
+	9 [color="#ff0000", fontcolor="#ffffff", fontsize="10.00", label="f2(unsigned long)\n100.00%\n(100.00%)\n635594×"];
+	9 -> 9 [arrowsize="1.00", color="#ff0000", fontcolor="#ff0000", fontsize="10.00", label="635568×", labeldistance="4.00", penwidth="4.00"];
+}

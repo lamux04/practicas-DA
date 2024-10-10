@@ -1,0 +1,18 @@
+			Call graph
+
+
+granularity: each sample hit covers 4 byte(s) no time propagated
+
+index % time    self  children    called     name
+                0.00    0.00      26/26          main [6]
+[8]      0.0    0.00    0.00      26         f1(unsigned long) [8]
+-----------------------------------------------
+                              635568             f2(unsigned long) [9]
+                0.00    0.00      26/26          main [6]
+[9]      0.0    0.00    0.00      26+635568  f2(unsigned long) [9]
+                              635568             f2(unsigned long) [9]
+-----------------------------------------------
+
+Index by function name
+
+   [8] f1(unsigned long)       [9] f2(unsigned long)
