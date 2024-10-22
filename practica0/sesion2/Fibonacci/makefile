@@ -5,7 +5,7 @@ override CXXFLAGS += -std=c++17 -Wall -Wextra
 
 # Módulos objeto y ejecutables.
 
-OBJS = prueba-1.o prueba-2.o fibonacci-1.o fibonacci-2.o
+OBJS = prueba-1.o prueba-2.o fibonacci-1.o fibonacci-2.o prueba.o
 EXES = prueba-1 prueba-2
 
 # Ficheros de tiempo y de gráficas.
@@ -23,6 +23,9 @@ prueba-1: prueba-1.o fibonacci-1.o
 	$(CXX) $(LDFLAGS) -o $@ $^
 
 prueba-2: prueba-2.o fibonacci-2.o
+	$(CXX) $(LDFLAGS) -o $@ $^
+
+prueba: prueba.o
 	$(CXX) $(LDFLAGS) -o $@ $^
 
 # Obtención de los objetos.
