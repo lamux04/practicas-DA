@@ -2,6 +2,7 @@
 #define GRAFO_PONDERADO_HPP_
 
 #include <iostream>
+#include <queue>
 #include <algorithm>
 #include <iterator>
 #include "grafo.hpp"
@@ -51,7 +52,7 @@ std::ostream& operator <<(std::ostream& fs, const AristaPonderada<V, P>& a)
 
 
 template <typename G>
-G Kruskal(const G& g)
+G Kruskal1(const G& g)
 {
     using std::list;
     using Arista = typename G::Arista;
@@ -67,6 +68,35 @@ G Kruskal(const G& g)
     {
         Arista t = *(c.begin());
         c.erase(c.begin());
+
+        int n1 = p.buscar(t.primero()),
+            n2 = p.buscar(t.segundo());
+        if (n1 != n2)
+        {
+            p.unir(n1, n2);
+            s.insertarArista(t);
+            n--;
+        }
+    }
+    return s;
+}
+
+template <typename G>
+G Kruskal2(const G& g)
+{
+    using std::list;
+    using Arista = typename G::Arista;
+    using Vertice = typename G::Vertice;
+    size_t n = g.nVertices();
+    G s(n);
+    Particion p(n);
+
+    std::priority_queue c(g.aristas().begin(), g.aristas().end());
+
+    while (n > 1 && !c.empty())
+    {
+        Arista t = c.top();
+        c.pop();
 
         int n1 = p.buscar(t.primero()),
             n2 = p.buscar(t.segundo());
