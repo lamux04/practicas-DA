@@ -122,6 +122,9 @@
     "cinttypes": "cpp",
     "typeinfo": "cpp",
     "valarray": "cpp",
-    "variant": "cpp"
+    "variant": "cpp",
+    "hash_map": "cpp",
+    "codecvt": "cpp",
+    "stdfloat": "cpp"
 }
 }
