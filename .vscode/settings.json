@@ -125,6 +125,15 @@
     "variant": "cpp",
     "hash_map": "cpp",
     "codecvt": "cpp",
-    "stdfloat": "cpp"
+    "stdfloat": "cpp",
+    "bitset": "cpp",
+    "complex": "cpp",
+    "forward_list": "cpp",
+    "set": "cpp",
+    "unordered_set": "cpp",
+    "regex": "cpp",
+    "shared_mutex": "cpp",
+    "cfenv": "cpp",
+    "typeindex": "cpp"
 }
 }

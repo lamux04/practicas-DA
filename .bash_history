@@ -54,3 +54,59 @@ make
 ./ejercicio1 
 make
 ./ejercicio1 
+cd practica1/ejercicio3/
+ls
+make
+make all
+make
+make
+make clean
+make
+make
+./main
+make
+./main
+make
+./main
+make
+./main
+make
+./main
+make
+./main
+make
+./main
+make
+./main
+make
+./main
+make
+./main
+make
+make
+make
+./main
+make
+./main
+make
+./main
+cd ../ejercicio4
+make
+./main
+make
+cd ../ejercicio5
+make
+./main
+make
+make
+make
+make
+make
+make
+make
+make
+make
+make
+make
+make
+./main
