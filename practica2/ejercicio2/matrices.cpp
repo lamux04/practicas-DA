@@ -3,15 +3,6 @@
 #include <limits>
 #include <list>
 
-const double MatrizPesos::infinito = std::numeric_limits<double>::max();
-
-double suma(double a, double b)
-{
-    if (MatrizPesos::infinito != a && MatrizPesos::infinito != b)
-        return a + b;
-    else return MatrizPesos::infinito;
-}
-
 MatrizCaminos Floyd(MatrizPesos& p)
 {
     size_t n = p.size();
@@ -27,9 +18,9 @@ MatrizCaminos Floyd(MatrizPesos& p)
         for (int i = 0; i < n; ++i)
             for (int j = 0; j < n; ++j)
             {
-                if (suma(p[i][k], p[k][j]) < p[i][j])
+                if (p[i][k] + p[k][j] < p[i][j])
                 {
-                    p[i][j] = suma(p[i][k], p[k][j]);
+                    p[i][j] = p[i][k] + p[k][j];
                     S[i][j] = k;
                 }
             }

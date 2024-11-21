@@ -4,6 +4,7 @@
 #include <stddef.h>
 #include <list>
 #include <vector>
+#include <limits>
 
 template <typename T>
 class MatrizCuadrada
@@ -22,7 +23,7 @@ private:
 class MatrizPesos : public MatrizCuadrada<double>
 {
 public:
-    static const double infinito;
+    static constexpr double infinito = std::numeric_limits<double>::infinity();
     MatrizPesos(size_t n) : MatrizCuadrada<double>(n) {}
 };
 
