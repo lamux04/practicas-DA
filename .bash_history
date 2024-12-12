@@ -110,3 +110,12 @@ make
 make
 make
 ./main
+cd practica4/ejercicio1/
+gdb main
+ls
+make
+make clean
+make
+gdb main
+exit
+exit
