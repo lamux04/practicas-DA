@@ -71,10 +71,12 @@ bool solucion(const std::vector<Tablero>& s, size_t k)
     return esSolucion;
 }
 
-void vuelta_atras(std::vector<Tablero>& s, size_t k, std::list<Tablero>& lista)
+bool vuelta_atras(std::vector<Tablero>& s, size_t k, Tablero& tsolucion)
 {
     size_t n = s[0].dimension();
-    for (size_t j = 0; j < n; ++j)
+    bool bsolucion = false;
+    size_t j = 0;
+    while (j < n && !bsolucion)
     {
         if (!s[k - 1].amenazada(k - 1, j))
         {
@@ -83,19 +85,20 @@ void vuelta_atras(std::vector<Tablero>& s, size_t k, std::list<Tablero>& lista)
             // std::cout << s[k] << std::endl << std::endl;
             if (solucion(s, k))
             {
-                lista.push_back(s[k]); // Solo agregar si no está ya en la lista
+                tsolucion = s[k];
+                bsolucion = true;
             }
             else
-                vuelta_atras(s, k + 1, lista);
+                bsolucion = vuelta_atras(s, k + 1, tsolucion);
         }
+        ++j;
     }
+    return bsolucion;
 }
 
-std::list<Tablero> damas(Tablero& t)
+bool damas_solucion(Tablero& t)
 {
-    std::list<Tablero> lista;
     std::vector<Tablero> s(t.dimension() + 1, t);
-    vuelta_atras(s, 1, lista);
-    return lista;
+    return vuelta_atras(s, 1, t);
 }
 

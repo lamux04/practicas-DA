@@ -10,11 +10,8 @@ int main(int argc, char* argv[])
     int n;
     from_chars(input, input + std::strlen(input), n);
     Tablero t(n);
-    std::list<Tablero> soluciones = damas(t);
+    bool solucion = damas_solucion(t);
 
-    std::cout << "SOLUCIONES:" << endl;
-    for (auto i : soluciones)
-        cout << i << endl;
-    std::cout << soluciones.size() << endl;
+    std::cout << t;
     return 0;
 }
