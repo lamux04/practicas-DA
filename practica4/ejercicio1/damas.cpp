@@ -80,10 +80,9 @@ void vuelta_atras(std::vector<Tablero>& s, size_t k, std::list<Tablero>& lista)
         {
             s[k] = s[k - 1];
             s[k].coloca(k - 1, j);
-            // std::cout << s[k] << std::endl << std::endl;
             if (solucion(s, k))
             {
-                lista.push_back(s[k]); // Solo agregar si no está ya en la lista
+                lista.push_back(s[k]);
             }
             else
                 vuelta_atras(s, k + 1, lista);
