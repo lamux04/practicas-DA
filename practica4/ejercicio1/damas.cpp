@@ -80,7 +80,7 @@ void vuelta_atras(std::vector<Tablero>& s, size_t k, std::list<Tablero>& lista)
         {
             s[k] = s[k - 1];
             s[k].coloca(k - 1, j);
-            if (solucion(s, k))
+            if (k == n)
             {
                 lista.push_back(s[k]);
             }
